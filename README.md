@@ -105,6 +105,43 @@ testExpression can test `expr` or `exprSrc`
 
 if `testExpression` is set, `testVariant` is ignored
 
+## Background
+
+the coffeescript compiler `coffee -c`  
+translates binary conditionals like `res = if test then cond`  
+to ternary conditionals like `res = test ? cond : void 0`  
+
+for example,  
+when transforming React CJSX (coffee-JSX) to JSX code:
+
+```cjsx
+# cjsx
+f = () ->
+  <Component arg={if test then "cond"} />
+```
+
+```jsx
+// jsx
+f = () => (
+  <Component arg={test ? "cond" : void 0} />
+);
+```
+
+but the expected result is
+```jsx
+// jsx
+f = () => (
+  <Component arg={test && "cond"} />
+);
+```
+
+such ternary conditionals are unnecessary in some situations  
+more precise:  
+when `res` is tested with a 'bool test'
+
+this plugin was made to remove such unneeded ternary conditionals  
+and transform them to `res = test && cond`
+
 ## Related
 
 the rule `ternary-to-binary-conditional` is similar  
