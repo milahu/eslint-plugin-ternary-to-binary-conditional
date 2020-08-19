@@ -29,6 +29,11 @@ $ git clone --depth=1 https://github.com/milahu/eslint-plugin-ternary-to-binary-
 $ npm i -D eslint-plugin-ternary-to-binary-conditional
 ```
 
+if you prefer `pnpm`, it needs the absolute path:
+```
+$ pnpm i -D $(readlink -f eslint-plugin-ternary-to-binary-conditional)
+```
+
 ## Use
 
 If you have no `.eslintrc.js` config file,  
