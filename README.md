@@ -19,19 +19,13 @@ and the transform is lossless for your code
 First install [ESLint](http://eslint.org):
 
 ```
-$ npm i -D eslint
+$ npm i -g eslint
 ```
 
 Second install `eslint-plugin-ternary-to-binary-conditional`:
 
 ```
-$ git clone --depth=1 https://github.com/milahu/eslint-plugin-ternary-to-binary-conditional
-$ npm i -D eslint-plugin-ternary-to-binary-conditional
-```
-
-if you prefer `pnpm`, it needs the absolute path:
-```
-$ pnpm i -D $(readlink -f eslint-plugin-ternary-to-binary-conditional)
+$ npm i -g https://github.com/milahu/eslint-plugin-ternary-to-binary-conditional
 ```
 
 ## Use
