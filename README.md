@@ -22,7 +22,7 @@ First install [ESLint](http://eslint.org):
 $ npm i -g eslint
 ```
 
-Second install `eslint-plugin-ternary-to-binary-conditional`:
+Second install the plugin:
 
 ```
 $ npm i -g https://github.com/milahu/eslint-plugin-ternary-to-binary-conditional
