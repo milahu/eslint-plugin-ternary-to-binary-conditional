@@ -1,0 +1,1 @@
+# eslint-plugin-ternary-to-binary-conditional
