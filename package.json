@@ -1,19 +1,18 @@
 {
   "name": "eslint-plugin-ternary-to-binary-conditional",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "transform (t ? c : false) to (t && c)",
   "keywords": [
     "eslint",
     "eslintplugin",
     "eslint-plugin"
   ],
-  "author": "milahu",
+  "author": "milahu@gmail.com",
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha tests --recursive"
   },
   "dependencies": {
-    "eslint-ast-utils": "^1.1.0",
     "requireindex": "^1.2.0"
   },
   "devDependencies": {
