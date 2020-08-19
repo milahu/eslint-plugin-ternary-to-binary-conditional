@@ -82,12 +82,14 @@ bool false is used in
 The option `testVariant` or `testExpression` decides,  
 how `expr` is tested in the ternary conditional `(t ? c : expr)`
 
+The default config is `{testVariant: "strict"}`
+
 Values for `testVariant` are defined in `testExpressionPresets`  
 in the file `lib/rules/ternary-to-binary-conditional.js`
 
 Each testVariant sets a testExpression:
 
-* strict: `expr === false`
+* strict: `expr === false` (default)
 * abstract: `expr == false`
 * bool: `!expr`
 * bool-or-abstract: `!expr || expr == false`
