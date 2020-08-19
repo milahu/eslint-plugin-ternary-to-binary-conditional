@@ -1,13 +1,13 @@
 # eslint-plugin-ternary-to-binary-conditional
 
-transform (t ? c : expr) to (t && c)  
-if expr is a variant of false
+transform `(t ? c : expr)` to `(t && c)`  
+if `expr` is a variant of false
 
 the "false variant" is defined in the rule config
 
 note: this is a lossy transform.  
 if it works for your code depends on  
-how the return value of r=(t?c:expr) is tested
+how the return value of `r=(t ? c : expr)` is tested
 
 for example, when r is tested with a 'bool test' like  
 `if (r) {c} else {a}` or `(r && c)` or `(r ? c : a)`  
@@ -38,18 +38,18 @@ Add plugin and rule to your `.eslintrc.js`:
 
 ```js
 module.exports = {
-	// ...
-	"plugins": [
-		"ternary-to-binary-conditional",
-	],
+  // ...
+  "plugins": [
+    "ternary-to-binary-conditional",
+  ],
   "rules": {
-		"ternary-to-binary-conditional/ternary-to-binary-conditional": [
-			"error", {
-				testVariant: "strict",
-				//testExpression: "exprSrc === 'void 0'",
-				*/
-			}
-		],
+    "ternary-to-binary-conditional/ternary-to-binary-conditional": [
+      "error", {
+        testVariant: "strict",
+        //testExpression: "exprSrc === 'void 0'",
+        */
+      }
+    ],
   },
 };
 ```
@@ -75,10 +75,11 @@ bool false is used in
 * `(expr && cond)` (binary conditional expression)
 * `(expr ? cond : alt)` (ternary conditional expression)
 
-The option `testVariant` or `testExpression` decides,
+The option `testVariant` or `testExpression` decides,  
 how `expr` is tested in the ternary conditional `(t ? c : expr)`
 
-Values for `testVariant` are defined in `testExpressionPresets` in the file `lib/rules/ternary-to-binary-conditional.js`
+Values for `testVariant` are defined in `testExpressionPresets`  
+in the file `lib/rules/ternary-to-binary-conditional.js`
 
 Each testVariant sets a testExpression:
 
@@ -99,6 +100,11 @@ you can set `testExpression` to something like
 testExpression can test `expr` or `exprSrc`
 
 if `testExpression` is set, `testVariant` is ignored
+
+## Related
+
+the rule `ternary-to-binary-conditional` is similar  
+to the eslint rule [no-unneeded-ternary](https://eslint.org/docs/2.0.0/rules/no-unneeded-ternary) ([source](https://github.com/eslint/eslint/blob/master/lib/rules/no-unneeded-ternary.js))
 
 ## License
 
