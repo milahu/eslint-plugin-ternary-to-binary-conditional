@@ -47,7 +47,6 @@ module.exports = {
       "error", {
         testVariant: "strict",
         //testExpression: "exprSrc === 'void 0'",
-        */
       }
     ],
   },
